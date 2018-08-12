@@ -17,7 +17,7 @@ public class BarController : MonoBehaviour {
         set
         {
             string[] temp = text.text.Split(':'); // breaks up the Health and 100 from Health : 100
-            text.text = temp[0] + "; " + value;
+            text.text = temp[0] + ": " + value;
             fillAmount = Map(value, 0, MaxValue, 0, 1);
         }
     }

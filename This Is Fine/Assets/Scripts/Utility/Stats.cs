@@ -20,6 +20,7 @@ public class Stats {
         set
         {
             this.currentHp = Mathf.Clamp(value, 0, MaxHp);
+            bar.Value = currentHp;
         }
     }
 

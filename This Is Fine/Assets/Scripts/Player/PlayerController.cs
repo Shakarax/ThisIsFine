@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	private void Start ()
     {
+        healthStat.Initialize();
         IsDead = false;
         MyTransform = GetComponent<Transform>();
         MyRigidbody2D = GetComponent<Rigidbody2D>();

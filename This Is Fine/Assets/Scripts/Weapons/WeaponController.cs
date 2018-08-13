@@ -9,5 +9,12 @@ public abstract class WeaponController : MonoBehaviour {
     [SerializeField] protected float damage = 1.0f;
     [SerializeField] protected int quality = 1;
 
+    public int Quality{
+        get { return quality; }
+        set
+        {
+            quality = value;
+        }
+     }
     protected SpriteRenderer weaponSpriteRenderer;
 }

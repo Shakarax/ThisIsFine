@@ -19,10 +19,13 @@ public abstract class WeaponController : MonoBehaviour {
 
     public float FiringRate
     {
-        get
-        {
-            return firingrate;
-        }
+        get {return firingrate;}
+    }
+
+    public float Damage
+    {
+        get { return damage; }
+        set { damage = value; }
     }
     protected SpriteRenderer weaponSpriteRenderer;
 }

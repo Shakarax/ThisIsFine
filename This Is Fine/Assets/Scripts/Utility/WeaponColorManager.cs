@@ -35,6 +35,7 @@ public class WeaponColorManager : MonoBehaviour {
         if (collider.tag == "Player")
         {
             PlayerController.Instance.WeaponSprite.color = weaponSpriteRenderer.color;
+            PlayerController.Instance.GetComponentInChildren<WeaponController>().Quality = weapon.Quality;
             Destroy(gameObject);
         }
     }

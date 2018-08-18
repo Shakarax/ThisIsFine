@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletManager : MonoBehaviour {
 
     [SerializeField] private GameObject bullet;
-    [SerializeField] private int maxPoolSize = 100;
+    [SerializeField] private int maxPoolSize = 20;
     [SerializeField] private GameObject weapon;
     private float firingRate;
     private float currentCooldownTimer; // this is Increase equal to attackSpeed

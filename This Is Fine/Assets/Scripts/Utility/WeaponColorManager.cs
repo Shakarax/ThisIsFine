@@ -35,14 +35,8 @@ public class WeaponColorManager : MonoBehaviour {
         if (collider.tag == "Player")
         {
             PlayerController.Instance.WeaponSprite.color = weaponSpriteRenderer.color;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collider)
-    {
-        if (collider.tag == "Player")
-        {
             Destroy(gameObject);
         }
     }
+
 }

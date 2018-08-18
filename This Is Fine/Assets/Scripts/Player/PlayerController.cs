@@ -9,15 +9,16 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float attackSpeed = 1f;
     [SerializeField] private Stats healthStat;
     [SerializeField] private List<string> damageSources;
+    [SerializeField] private GameObject weapon;
 
     private Vector3 inputMovement;
-    float angleDegrees;
 
     // Property variables
     public Animator MyAnimator { get; set; }
     public Rigidbody2D MyRigidbody2D { get; set; }
     public Transform MyTransform { get; set; }
     public bool IsDead { get; set; }
+    public SpriteRenderer WeaponSprite { get; set; }
 
     // Creates a singleton of the Player so we dont make multiple instances of the doggo :D
     private static PlayerController instance;
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour {
     {
         healthStat.Initialize();
         IsDead = false;
+        WeaponSprite = weapon.GetComponent<SpriteRenderer>();
         MyTransform = GetComponent<Transform>();
         MyRigidbody2D = GetComponent<Rigidbody2D>();
         MyAnimator = GetComponent<Animator>();
@@ -43,7 +45,7 @@ public class PlayerController : MonoBehaviour {
 	// Put anything non physics related that needs updating here
 	private void Update ()
     {
-        HandleInput();
+
 	}
 
     // Anything physics related should go in this update function
@@ -77,14 +79,5 @@ public class PlayerController : MonoBehaviour {
 
     }
 
-    private void HandleInput()
-    {
-        /*
-         * Num Lock Controls dont think we need them
-        if (Input.GetKeyDown(KeyCode.Keypad4) || angleDegrees == -2) { MyAnimator.SetTrigger("Aim Left"); }
-        if (Input.GetKeyDown(KeyCode.Keypad8) || angleDegrees == 0) { MyAnimator.SetTrigger("Aim Up"); }
-        if (Input.GetKeyDown(KeyCode.Keypad6) || angleDegrees == 2) { MyAnimator.SetTrigger("Aim Right"); }
-        if (Input.GetKeyDown(KeyCode.Keypad2) || angleDegrees == 4 || angleDegrees == -4) { MyAnimator.SetTrigger("Aim Down"); }
-        */
-    }
+
 }

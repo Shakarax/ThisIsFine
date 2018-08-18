@@ -16,5 +16,13 @@ public abstract class WeaponController : MonoBehaviour {
             quality = value;
         }
      }
+
+    public float FiringRate
+    {
+        get
+        {
+            return firingrate;
+        }
+    }
     protected SpriteRenderer weaponSpriteRenderer;
 }

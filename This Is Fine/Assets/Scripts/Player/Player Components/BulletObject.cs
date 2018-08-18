@@ -10,6 +10,7 @@ public class BulletObject : PoolObject {
     // Update is called once per frame
     private void FixedUpdate()
     {
+        // this logic is good for pistol
         var worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 relativePoint = transform.InverseTransformPoint(worldPosition);
         transform.Translate(relativePoint * Time.deltaTime * movementSpeed);

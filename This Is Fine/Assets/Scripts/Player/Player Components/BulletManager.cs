@@ -7,7 +7,7 @@ public class BulletManager : MonoBehaviour {
     [SerializeField] private GameObject bullet;
     [SerializeField] private int maxPoolSize = 100;
     [SerializeField] private GameObject weapon;
-    private float firingRate = 1f;
+    private float firingRate;
     private float currentCooldownTimer; // this is Increase equal to attackSpeed
     private bool hasCooldownTimerStarted = false;
 
@@ -15,6 +15,7 @@ public class BulletManager : MonoBehaviour {
     // Use this for initialization
     private void Start()
     {
+        firingRate = PlayerController.Instance.GetComponentInChildren<WeaponController>().FiringRate;
         GamePoolManager.Instance.CreatePool(bullet, maxPoolSize);
     }
 

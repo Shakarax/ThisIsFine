@@ -24,6 +24,7 @@ public class FireController : MonoBehaviour {
         {
             Debug.Log("I HIT YOU FIRE!");
             currentHp -= PlayerController.Instance.GetComponentInChildren<WeaponController>().Damage;
+            PlayerController.Instance.PlayerScoreCount += 100;
             collider.gameObject.SetActive(false);
         }
     }

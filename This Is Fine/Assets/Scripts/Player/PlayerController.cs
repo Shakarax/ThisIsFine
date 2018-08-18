@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
@@ -10,8 +11,10 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private Stats healthStat;
     [SerializeField] private List<string> damageSources;
     [SerializeField] private GameObject weapon;
+    [SerializeField] private Text playerScoreText;
 
     private Vector3 inputMovement;
+    private int playerScoreCount;
 
     // Property variables
     public Animator MyAnimator { get; set; }
@@ -19,6 +22,10 @@ public class PlayerController : MonoBehaviour {
     public Transform MyTransform { get; set; }
     public bool IsDead { get; set; }
     public SpriteRenderer WeaponSprite { get; set; }
+    public int PlayerScoreCount {
+        get { return playerScoreCount; }
+        set { playerScoreCount = value; }
+    }
 
     // Creates a singleton of the Player so we dont make multiple instances of the doggo :D
     private static PlayerController instance;
@@ -34,6 +41,7 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	private void Start ()
     {
+        PlayerScoreCount = 0;
         healthStat.Initialize();
         IsDead = false;
         WeaponSprite = weapon.GetComponent<SpriteRenderer>();
@@ -45,13 +53,18 @@ public class PlayerController : MonoBehaviour {
 	// Put anything non physics related that needs updating here
 	private void Update ()
     {
-
+        UpdateScoreCount();
 	}
 
     // Anything physics related should go in this update function
     private void FixedUpdate()
     {
         HandleMovement();
+    }
+
+    private void UpdateScoreCount()
+    {
+        playerScoreText.text = PlayerScoreCount.ToString();
     }
 
     // Will handle movement of the player

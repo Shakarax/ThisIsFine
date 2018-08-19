@@ -14,7 +14,7 @@ public class PistolController : WeaponController
 
     private void Start()
     {
-        playerWeapon = PlayerController.Instance.GetComponentInChildren<WeaponController>();
+        playerWeapon = PlayerController.Instance.GetComponentInChildren<PistolController>();
         currentQuality = playerWeapon.Quality;
     }
 
@@ -36,4 +36,5 @@ public class PistolController : WeaponController
             playerWeapon.Damage = qualityFourDamage;
         }
     }
+
 }

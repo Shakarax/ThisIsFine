@@ -62,8 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Fire\FireController.cs" />
-    <Compile Include="Assets\Scripts\Player\Player Components\BulletManager.cs" />
-    <Compile Include="Assets\Scripts\Player\Player Components\BulletObject.cs" />
+    <Compile Include="Assets\Scripts\Player\Player Components\PistolBullet.cs" />
+    <Compile Include="Assets\Scripts\Player\Player Components\PistolBulletManager.cs" />
+    <Compile Include="Assets\Scripts\Player\Player Components\ShotgunBullet.cs" />
+    <Compile Include="Assets\Scripts\Player\Player Components\ShotgunBulletManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Utility\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Utility\LevelManager.cs" />

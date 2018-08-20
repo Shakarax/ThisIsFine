@@ -20,10 +20,15 @@ public class FireController : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag == "Bullet")
+        if (collider.tag == "PistolBullet")
         {
-            Debug.Log("I HIT YOU FIRE!");
-            currentHp -= PlayerController.Instance.GetComponentInChildren<WeaponController>().Damage;
+            currentHp -= PlayerController.Instance.GetComponentInChildren<PistolController>().Damage;
+            PlayerController.Instance.PlayerScoreCount += 100;
+            collider.gameObject.SetActive(false);
+        }
+        if (collider.tag == "ShotgunBullet")
+        {
+            currentHp -= PlayerController.Instance.GetComponentInChildren<ShotgunController>().Damage;
             PlayerController.Instance.PlayerScoreCount += 100;
             collider.gameObject.SetActive(false);
         }

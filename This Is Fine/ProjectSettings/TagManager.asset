@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bullet
   - Fire
+  - PistolBullet
+  - ShotgunBullet
   layers:
   - Default
   - TransparentFX

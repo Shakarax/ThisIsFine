@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class ShotgunController : WeaponController {
 
-    [SerializeField] private float qualityOneDamage = 1f;
-    [SerializeField] private float qualityTwoDamage = 2f;
-    [SerializeField] private float qualityThreeDamage = 3f;
-    [SerializeField] private float qualityFourDamage = 4f;
+    [SerializeField] private float qualityOneDamage = 10f;
+    [SerializeField] private float qualityTwoDamage = 20f;
+    [SerializeField] private float qualityThreeDamage = 30f;
+    [SerializeField] private float qualityFourDamage = 40f;
 
     private int currentQuality;
     private WeaponController playerWeapon;
 
     private void Start()
     {
-        playerWeapon = PlayerController.Instance.GetComponentInChildren<ShotgunController>();
+        playerWeapon = GetComponent<WeaponController>();
         currentQuality = playerWeapon.Quality;
     }
 

@@ -419,7 +419,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firingrate: 1
-  radius: 1
   damage: 1
   quality: 1
   qualityOneDamage: 1
@@ -449,13 +448,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firingrate: 1
-  radius: 1
   damage: 1
   quality: 1
-  qualityOneDamage: 1
-  qualityTwoDamage: 2
-  qualityThreeDamage: 3
-  qualityFourDamage: 4
+  qualityOneDamage: 10
+  qualityTwoDamage: 20
+  qualityThreeDamage: 30
+  qualityFourDamage: 40
 --- !u!212 &212054473498551600
 SpriteRenderer:
   m_ObjectHideFlags: 1

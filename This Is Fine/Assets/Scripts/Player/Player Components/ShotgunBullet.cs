@@ -37,4 +37,12 @@ public class ShotgunBullet : PoolObject {
         movementDirection = new Vector2(Mathf.Cos(rotateAngle * Mathf.Deg2Rad), Mathf.Sin(rotateAngle * Mathf.Deg2Rad));
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Wall")
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
 }

@@ -7,6 +7,10 @@ TagManager:
   - Fire
   - PistolBullet
   - ShotgunBullet
+  - Wall
+  - PlayerSpawn
+  - FireSpawnPoint
+  - WeaponSpawnPoint
   layers:
   - Default
   - TransparentFX

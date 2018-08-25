@@ -25,6 +25,14 @@ public class PistolBullet : PoolObject {
         worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Wall")
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
 
 
 }

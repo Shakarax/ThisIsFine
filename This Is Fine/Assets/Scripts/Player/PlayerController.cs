@@ -12,8 +12,10 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private List<string> damageSources;
     [SerializeField] private GameObject weapon;
     [SerializeField] private Text playerScoreText;
+    
 
     private Vector3 inputMovement;
+    private Vector3 startPosition;
     private int playerScoreCount;
 
     // Property variables
@@ -92,5 +94,11 @@ public class PlayerController : MonoBehaviour {
 
     }
 
+    // put him in level change function
+    private Transform PlayerSpawnHandler()
+    {
+        return GameObject.FindGameObjectWithTag("PlayerSpawn").transform;
+    }
 
+    // TODO add level change function
 }

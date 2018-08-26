@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Utility\Object Pool\GamePoolManager.cs" />
     <Compile Include="Assets\Scripts\Utility\Object Pool\PoolObject.cs" />
     <Compile Include="Assets\Scripts\Utility\UI\BarController.cs" />
+    <Compile Include="Assets\Scripts\Utility\UI\Minimap.cs" />
     <Compile Include="Assets\Scripts\Utility\UI\Stats.cs" />
     <Compile Include="Assets\Scripts\Utility\WeaponColorManager.cs" />
     <Compile Include="Assets\Scripts\Weapons\PistolController.cs" />

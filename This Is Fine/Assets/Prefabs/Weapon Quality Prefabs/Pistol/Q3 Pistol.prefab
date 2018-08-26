@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114906553889421500}
   - component: {fileID: 61567218850482610}
   m_Layer: 0
-  m_Name: Q1 Pistol
+  m_Name: Q3 Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,13 +79,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9476d6e56bd21754781c8bdeda6e2bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingrate: 1
+  firingrate: 1.5
   damage: 1
-  quality: 1
+  quality: 3
   qualityOneDamage: 10
-  qualityTwoDamage: 20
-  qualityThreeDamage: 30
-  qualityFourDamage: 40
+  qualityTwoDamage: 25
+  qualityThreeDamage: 35
+  qualityFourDamage: 50
 --- !u!114 &114906553889421500
 MonoBehaviour:
   m_ObjectHideFlags: 1

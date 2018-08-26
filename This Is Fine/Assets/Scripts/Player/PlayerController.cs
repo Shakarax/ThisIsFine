@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour {
     private Vector3 startPosition;
     private SpriteRenderer playerSprite;
     private int playerScoreCount;
+    private float gameTimerClock;
 
     // Property variables
     public Animator MyAnimator { get; set; }
@@ -66,6 +67,7 @@ public class PlayerController : MonoBehaviour {
 	// Put anything non physics related that needs updating here
 	private void Update ()
     {
+        GameTimer();
         UpdateScoreCount();
         if (FireManager.Instance.FireCount <= 0 && !hasSwappedLevel)
         {
@@ -208,6 +210,17 @@ public class PlayerController : MonoBehaviour {
         WeaponSpawnManager.Instance.DeSpawnWeaponHandler();
         FireManager.Instance.DeSpawnFireHandler();
         FireManager.Instance.SpawnFireHandler();
+        healthStat.CurrentHp = healthStat.MaxHp;
         
+    }
+
+    private void GameTimer()
+    {
+        gameTimerClock += Time.deltaTime;
+        if (gameTimerClock >= 60)
+        {
+            healthStat.CurrentHp -= 10f;
+            gameTimerClock = 0;
+        }
     }
 }

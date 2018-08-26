@@ -13,6 +13,7 @@ TagManager:
   - WeaponSpawnPoint
   - Pistol
   - Shotgun
+  - BossSpawnPoint
   layers:
   - Default
   - TransparentFX

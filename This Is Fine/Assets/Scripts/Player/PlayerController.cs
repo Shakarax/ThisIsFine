@@ -144,7 +144,20 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if (collision.tag == "Pistol") { if (!GameObject.Find("Pistol")) { } }
+        if (collision.tag == "Pistol") {
+            if (!pistol.activeInHierarchy) {
+                pistol.SetActive(true);
+                shotgun.SetActive(false);
+                WeaponSprite = pistol.GetComponent<SpriteRenderer>();
+            }
+        }
+        if (collision.tag == "Shotgun"){
+            if (!shotgun.activeInHierarchy){
+                shotgun.SetActive(true);
+                pistol.SetActive(false);
+                WeaponSprite = shotgun.GetComponent<SpriteRenderer>();
+            }
+        }
         if (damageSources.Contains(collision.tag)) { StartCoroutine(TakeDamage(collision)); }
     }
 

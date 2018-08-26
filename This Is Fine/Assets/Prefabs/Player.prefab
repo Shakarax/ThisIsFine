@@ -154,7 +154,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1859890095074262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.46, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 4381283133548888}
@@ -412,6 +412,8 @@ MonoBehaviour:
   playerScoreText: {fileID: 0}
   damageSources:
   - Fire
+  pistol: {fileID: 1456974078953972}
+  shotgun: {fileID: 1264200381266850}
 --- !u!114 &114583992655393670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -426,10 +428,10 @@ MonoBehaviour:
   firingrate: 1
   damage: 1
   quality: 1
-  qualityOneDamage: 1
-  qualityTwoDamage: 2
-  qualityThreeDamage: 3
-  qualityFourDamage: 4
+  qualityOneDamage: 20
+  qualityTwoDamage: 25
+  qualityThreeDamage: 35
+  qualityFourDamage: 50
 --- !u!114 &114756270699381364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -454,11 +456,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firingrate: 1
   damage: 1
-  quality: 4
-  qualityOneDamage: 10
-  qualityTwoDamage: 20
-  qualityThreeDamage: 30
-  qualityFourDamage: 40
+  quality: 1
+  qualityOneDamage: 20
+  qualityTwoDamage: 25
+  qualityThreeDamage: 35
+  qualityFourDamage: 50
 --- !u!212 &212054473498551600
 SpriteRenderer:
   m_ObjectHideFlags: 1

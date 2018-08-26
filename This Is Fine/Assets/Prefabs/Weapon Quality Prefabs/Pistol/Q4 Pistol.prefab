@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 61567218850482610}
   m_Layer: 0
   m_Name: Q4 Pistol
-  m_TagString: Untagged
+  m_TagString: Pistol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

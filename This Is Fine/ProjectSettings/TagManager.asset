@@ -11,6 +11,8 @@ TagManager:
   - PlayerSpawn
   - FireSpawnPoint
   - WeaponSpawnPoint
+  - Pistol
+  - Shotgun
   layers:
   - Default
   - TransparentFX

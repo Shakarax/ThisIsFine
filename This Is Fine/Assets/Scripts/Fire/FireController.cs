@@ -7,10 +7,13 @@ public class FireController : PoolObject {
     [SerializeField] private float maxHp;
     [SerializeField] private float currentHp;
     [SerializeField] private int fireScoreValue = 100;
+    [SerializeField] private float fireSpreadMinuteTimer = .5f;
 
     private bool doScaleFireOne = true;
     private bool doScaleFireTwo = true;
     private bool doScaleFireThree = true;
+
+
 
     // Update is called once per frame
     private void Update () {
@@ -84,4 +87,5 @@ public class FireController : PoolObject {
         currentHp = maxHp;
         transform.localScale = new Vector3(.6f, .6f, .6f);
     }
+
 }

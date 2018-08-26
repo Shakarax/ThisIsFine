@@ -27,12 +27,16 @@ public class PistolController : WeaponController
         currentQuality = playerWeapon.Quality;
         if (currentQuality == 1){
             playerWeapon.Damage = qualityOneDamage;
+            playerWeapon.FiringRate = 1f;
         } else if (currentQuality == 2){
             playerWeapon.Damage = qualityTwoDamage;
+            playerWeapon.FiringRate = 1.2f;
         } else if (currentQuality == 3){
             playerWeapon.Damage = qualityThreeDamage;
+            playerWeapon.FiringRate = 1.5f;
         } else if (currentQuality == 4){
             playerWeapon.Damage = qualityFourDamage;
+            playerWeapon.FiringRate = 1.75f;
         }
     }
 

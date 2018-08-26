@@ -10,15 +10,13 @@ public abstract class WeaponController : MonoBehaviour {
 
     public int Quality{
         get { return quality; }
-        set
-        {
-            quality = value;
-        }
+        set { quality = value; }
      }
 
     public float FiringRate
     {
         get {return firingrate;}
+        set { firingrate = value; }
     }
 
     public float Damage

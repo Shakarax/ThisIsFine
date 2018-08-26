@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private SpriteRenderer legsSprite;
     [SerializeField] private Text playerScoreText;
     [SerializeField] private List<string> damageSources;
+    [SerializeField] private GameObject pistol;
+    [SerializeField] private GameObject shotgun;
 
     private float immortalTime = 1;
     private bool immortal = false;
@@ -142,6 +144,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
+        if (collision.tag == "Pistol") { if (!GameObject.Find("Pistol")) { } }
         if (damageSources.Contains(collision.tag)) { StartCoroutine(TakeDamage(collision)); }
     }
 

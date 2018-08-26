@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireController : MonoBehaviour {
+public class FireController : PoolObject {
 
     [SerializeField] private float maxHp;
     [SerializeField] private float currentHp;
@@ -13,7 +13,7 @@ public class FireController : MonoBehaviour {
     private bool doScaleFireThree = true;
 
     // Update is called once per frame
-    void Update () {
+    private void Update () {
         IsFireDead();
         FireScaler();
 	}
@@ -32,13 +32,24 @@ public class FireController : MonoBehaviour {
             PlayerController.Instance.PlayerScoreCount += fireScoreValue;
             collider.gameObject.SetActive(false);
         }
+        if (collider.tag == "Fire")
+        {
+            FireManager.Instance.FireCount--;
+            gameObject.SetActive(false);
+        }
+        if (collider.tag == "Wall")
+        {
+            FireManager.Instance.FireCount--;
+            gameObject.SetActive(false);
+        }
     }
 
     private void IsFireDead()
     {
         if (currentHp <= 0)
         {
-            Destroy(gameObject);
+            FireManager.Instance.FireCount--;
+            gameObject.SetActive(false);
         }
     }
 
@@ -66,5 +77,11 @@ public class FireController : MonoBehaviour {
                 doScaleFireThree = false;
             }
         }
+    }
+
+    public override void OnObjectReuse()
+    {
+        currentHp = maxHp;
+        transform.localScale = new Vector3(.6f, .6f, .6f);
     }
 }

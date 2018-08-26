@@ -154,7 +154,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1859890095074262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.63, y: 1.65, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 4381283133548888}
@@ -404,9 +404,14 @@ MonoBehaviour:
     bar: {fileID: 0}
     maxHp: 150
     currentHp: 150
-  damageSources: []
   weapon: {fileID: 1456974078953972}
+  armSprite: {fileID: 212396500300187050}
+  pistolSprite: {fileID: 212497324128216988}
+  shotgunSprite: {fileID: 212908660065516726}
+  legsSprite: {fileID: 212054473498551600}
   playerScoreText: {fileID: 0}
+  damageSources:
+  - Fire
 --- !u!114 &114583992655393670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -449,7 +454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firingrate: 1
   damage: 1
-  quality: 1
+  quality: 4
   qualityOneDamage: 10
   qualityTwoDamage: 20
   qualityThreeDamage: 30

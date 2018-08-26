@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-    // Loading the level by scene name
+    // Loading the level by scene name for main menu or game over screen
     public void LoadLevel(string name)
     {
         // setting game to normal speed
@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour {
 
     }
 
-    // Quit the game
+    // Quit the game for main menu or game over screen
     public void OnApplicationQuit()
     {
         Application.Quit();

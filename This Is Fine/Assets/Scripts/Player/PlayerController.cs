@@ -18,8 +18,10 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private List<string> damageSources;
     [SerializeField] private GameObject pistol;
     [SerializeField] private GameObject shotgun;
+    [SerializeField] private List<GameObject> gameLevels;
 
     private float immortalTime = 1;
+    private bool hasSwappedLevel = false;
     private bool immortal = false;
     private Vector3 inputMovement;
     private Vector3 startPosition;
@@ -65,6 +67,16 @@ public class PlayerController : MonoBehaviour {
 	private void Update ()
     {
         UpdateScoreCount();
+        if (FireManager.Instance.FireCount <= 0 && !hasSwappedLevel)
+        {
+            LevelSwapper();
+        } else if (FireManager.Instance.FireCount > 0 && hasSwappedLevel){
+            hasSwappedLevel = false;
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            LevelSwapper();
+        }
 	}
 
     // Anything physics related should go in this update function
@@ -162,10 +174,39 @@ public class PlayerController : MonoBehaviour {
     }
 
     // put him in level change function
-    private Transform PlayerSpawnHandler()
+    private void PlayerSpawnHandler()
     {
-        return GameObject.FindGameObjectWithTag("PlayerSpawn").transform;
+        if (GameObject.FindGameObjectWithTag("PlayerSpawn").activeInHierarchy)
+        {
+            MyTransform.position = new Vector2(
+                GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position.x,
+                GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position.y);
+        } else{
+            Debug.Log("Couldn't Find Player Spawn object");
+        }
     }
 
-    // TODO add level change function
+    // I didn't want to make a separate class for this XD
+    private void LevelSwapper()
+    {
+        int randomLevel;
+        do
+        {
+            randomLevel = Random.Range(0, gameLevels.Capacity);
+        } while (gameLevels[randomLevel].activeInHierarchy);
+        foreach (GameObject level in gameLevels)
+        {
+            if (level.activeInHierarchy)
+            {
+                level.SetActive(false);
+            }
+        }
+        gameLevels[randomLevel].SetActive(true);
+        transform.parent = gameLevels[randomLevel].transform;
+        PlayerSpawnHandler();
+        hasSwappedLevel = true;
+        FireManager.Instance.FireCount = 0;
+        FireManager.Instance.SpawnFireHandler();
+        
+    }
 }

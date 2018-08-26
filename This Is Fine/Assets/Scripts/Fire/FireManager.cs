@@ -48,11 +48,12 @@ public class FireManager : MonoBehaviour {
         fireCountText.text = fireCount.ToString();
     }
 
-    private void SpawnFireHandler(){
+    public void SpawnFireHandler(){
 
         foreach(GameObject spawn in fireSpawnPoints)
         {
-            GamePoolManager.Instance.ReuseObject(fireObject, spawn.transform.position, Quaternion.identity);
+            Vector2 spawnLoc = new Vector2(spawn.transform.position.x, spawn.transform.position.y);
+            GamePoolManager.Instance.ReuseObject(fireObject, spawnLoc, Quaternion.identity);
             fireCount++;
         }
     }

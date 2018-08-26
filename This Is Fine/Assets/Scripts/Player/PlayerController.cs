@@ -205,7 +205,8 @@ public class PlayerController : MonoBehaviour {
         transform.parent = gameLevels[randomLevel].transform;
         PlayerSpawnHandler();
         hasSwappedLevel = true;
-        FireManager.Instance.FireCount = 0;
+        WeaponSpawnManager.Instance.DeSpawnWeaponHandler();
+        FireManager.Instance.DeSpawnFireHandler();
         FireManager.Instance.SpawnFireHandler();
         
     }

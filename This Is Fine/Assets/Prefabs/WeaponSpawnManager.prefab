@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1841719290666742}
+  m_IsPrefabAsset: 1
+--- !u!1 &1841719290666742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4413616670800488}
+  - component: {fileID: 114200313452266796}
+  m_Layer: 0
+  m_Name: WeaponSpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4413616670800488
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841719290666742}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0988502, y: 4.344283, z: 8.4453125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114200313452266796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841719290666742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e43e5c44fa88054c96711db2a196256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  qualityOneList:
+  - {fileID: 1245151580733888, guid: b00ac99ff7a66264381579637b9f39da, type: 2}
+  - {fileID: 1222112566186144, guid: 346ad24498a2aad479feac6cd8980a54, type: 2}
+  qualityTwoList:
+  - {fileID: 1245151580733888, guid: 00472b7b8997f874698b7fa77010b608, type: 2}
+  - {fileID: 1222112566186144, guid: 2c984940e478a8c419665ecc8e9fc169, type: 2}
+  qualityThreeList:
+  - {fileID: 1245151580733888, guid: a66868ec419746f49930188b1a47837a, type: 2}
+  - {fileID: 1222112566186144, guid: 7ee6bc1cb7f34bb4a8cde3f21e6d9031, type: 2}
+  qualityFourList:
+  - {fileID: 1245151580733888, guid: 318501c1bb7b0774a95a8f3967f06691, type: 2}
+  - {fileID: 1222112566186144, guid: 4417140ed25555e49b4915f357f6dc3a, type: 2}
+  qualityTimer: 0
+  qualityOneTime: 0
+  qualityTwoTime: 30
+  qualityThreeTime: 60
+  qualityFourTime: 90

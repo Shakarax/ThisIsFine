@@ -58,4 +58,17 @@ public class FireManager : MonoBehaviour {
         }
     }
 
+    public void DeSpawnFireHandler()
+    {
+        if (GameObject.FindGameObjectsWithTag("Fire") != null)
+        {
+            GameObject[] activeFires = GameObject.FindGameObjectsWithTag("Fire");
+            foreach (GameObject fire in activeFires)
+            {
+                fire.SetActive(false);
+            }
+        }
+        FireCount = 0;
+    }
+
 }

@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Weapons\PistolController.cs" />
     <Compile Include="Assets\Scripts\Weapons\ShotgunController.cs" />
     <Compile Include="Assets\Scripts\Weapons\WeaponController.cs" />
+    <Compile Include="Assets\Scripts\Weapons\WeaponSpawnManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>F:/Users/mahyar/Documents/UnityGames/ThisIsFine/This Is Fine/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

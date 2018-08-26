@@ -151,7 +151,7 @@ MonoBehaviour:
   maxHp: 100
   currentHp: 100
   fireScoreValue: 100
-  fireSpreadCooldown: 30
+  fireSpreadCooldown: 100
   firePrefab: {fileID: 1116842538242538}
   maxPoolSize: 4
 --- !u!212 &212055222422495536

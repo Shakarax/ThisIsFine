@@ -77,15 +77,12 @@ public class PlayerController : MonoBehaviour {
             // Render Game Over with Score
             SceneManager.LoadScene("GameOver");
         }
+
         if (FireManager.Instance.FireCount <= 0 && !hasSwappedLevel)
         {
             LevelSwapper();
         } else if (FireManager.Instance.FireCount > 0 && hasSwappedLevel){
             hasSwappedLevel = false;
-        }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            LevelSwapper();
         }
 	}
 

@@ -465,10 +465,10 @@ MonoBehaviour:
   firingrate: 1
   damage: 1
   quality: 1
-  qualityOneDamage: 10
-  qualityTwoDamage: 20
-  qualityThreeDamage: 30
-  qualityFourDamage: 40
+  qualityOneDamage: 20
+  qualityTwoDamage: 25
+  qualityThreeDamage: 35
+  qualityFourDamage: 50
 --- !u!212 &212054473498551600
 SpriteRenderer:
   m_ObjectHideFlags: 1

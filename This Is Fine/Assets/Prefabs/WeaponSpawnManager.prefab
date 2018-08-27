@@ -65,6 +65,6 @@ MonoBehaviour:
   - {fileID: 1222112566186144, guid: 4417140ed25555e49b4915f357f6dc3a, type: 2}
   qualityTimer: 0
   qualityOneTime: 0
-  qualityTwoTime: 30
-  qualityThreeTime: 60
-  qualityFourTime: 90
+  qualityTwoTime: 60
+  qualityThreeTime: 120
+  qualityFourTime: 180

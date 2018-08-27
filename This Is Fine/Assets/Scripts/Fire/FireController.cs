@@ -7,7 +7,7 @@ public class FireController : PoolObject {
     [SerializeField] private float maxHp;
     [SerializeField] private float currentHp;
     [SerializeField] private int fireScoreValue = 100;
-    [SerializeField] private float fireSpreadCooldown = 100f;
+    [SerializeField] private float fireSpreadCooldown = 90f;
     [SerializeField] private GameObject firePrefab;
     [SerializeField] private int maxPoolSize;
 
@@ -49,7 +49,7 @@ public class FireController : PoolObject {
         }
         if (collider.tag == "Fire" || collider.tag == "Wall")
         {
-            FireManager.Instance.FireCount--;
+            PlayerController.Instance.FireCount--;
             gameObject.SetActive(false);
         }
     }
@@ -58,7 +58,7 @@ public class FireController : PoolObject {
     {
         if (collider.tag == "Fire" || collider.tag == "Wall")
         {
-            FireManager.Instance.FireCount--;
+            PlayerController.Instance.FireCount--;
             gameObject.SetActive(false);
         }
     }
@@ -67,7 +67,7 @@ public class FireController : PoolObject {
     {
         if (currentHp <= 0)
         {
-            FireManager.Instance.FireCount--;
+            PlayerController.Instance.FireCount--;
             gameObject.SetActive(false);
         }
     }
@@ -128,7 +128,7 @@ public class FireController : PoolObject {
                 else if (randomDirection == (int)FireSpawnDirection.Up) { spawnLoc = new Vector2(transform.position.x, transform.position.y + 2); }
                 else { spawnLoc = new Vector2(transform.position.x, transform.position.y - 2); }
                 GamePoolManager.Instance.ReuseObject(firePrefab, spawnLoc, Quaternion.identity);
-                FireManager.Instance.FireCount++;
+                PlayerController.Instance.FireCount++;
             }
         }
     }

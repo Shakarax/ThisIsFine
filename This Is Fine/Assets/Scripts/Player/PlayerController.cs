@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private GameObject pistol;
     [SerializeField] private GameObject shotgun;
     [SerializeField] private List<GameObject> gameLevels;
+    [SerializeField] private Text fireCountText;
 
     private float immortalTime = 1;
     private bool hasSwappedLevel = false;
@@ -29,8 +30,14 @@ public class PlayerController : MonoBehaviour {
     private SpriteRenderer playerSprite;
     private int playerScoreCount;
     private float gameTimerClock;
+    private int fireCount;
 
     // Property variables
+    public int FireCount
+    {
+        get { return fireCount; }
+        set { fireCount = value; }
+    }
     public Animator MyAnimator { get; set; }
     public Rigidbody2D MyRigidbody2D { get; set; }
     public Transform MyTransform { get; set; }
@@ -57,6 +64,11 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	private void Start ()
     {
+        transform.position = new Vector2(
+           GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position.x,
+           GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position.y);
+        fireCount = 0;
+        fireCountText.text = fireCount.ToString();
         PlayerScoreCount = 0;
         healthStat.Initialize();
         IsDead = false;
@@ -78,12 +90,16 @@ public class PlayerController : MonoBehaviour {
             SceneManager.LoadScene("GameOver");
         }
 
-        if (FireManager.Instance.FireCount <= 0 && !hasSwappedLevel)
+        if (FireCount <= 0 && !hasSwappedLevel)
         {
             LevelSwapper();
-        } else if (FireManager.Instance.FireCount > 0 && hasSwappedLevel){
+        } else if (FireCount > 0 && hasSwappedLevel){
             hasSwappedLevel = false;
         }
+        // if (Input.GetKeyDown(KeyCode.T))
+        //{
+        //  LevelSwapper();
+        //}
 	}
 
     // Anything physics related should go in this update function
@@ -95,6 +111,7 @@ public class PlayerController : MonoBehaviour {
     private void UpdateScoreCount()
     {
         playerScoreText.text = PlayerScoreCount.ToString();
+        fireCountText.text = fireCount.ToString();
     }
 
     // Will handle movement of the player
@@ -207,6 +224,7 @@ public class PlayerController : MonoBehaviour {
         PlayerSpawnHandler();
         hasSwappedLevel = true;
         WeaponSpawnManager.Instance.DeSpawnWeaponHandler();
+        FireManager.Instance.CurrentLevel = randomLevel;
         FireManager.Instance.DeSpawnFireHandler();
         FireManager.Instance.SpawnFireHandler();
         healthStat.CurrentHp = healthStat.MaxHp;

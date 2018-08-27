@@ -5,19 +5,11 @@ using UnityEngine.UI;
 
 public class FireManager : MonoBehaviour {
 
-    [SerializeField] private Text fireCountText;
     [SerializeField] private GameObject fireObject;
     [SerializeField] private int maxPoolSize;
 
     private GameObject[] fireSpawnPoints;
-
-    private int fireCount;
-    public int FireCount
-    {
-        get { return fireCount; }
-        set { fireCount = value; }
-    }
-
+    public int CurrentLevel { get; set; }
     private int fireDamage = 20;
     public int FireDamage
     {
@@ -36,25 +28,24 @@ public class FireManager : MonoBehaviour {
 
     // Use this for initialization
     private void Start () {
-        fireCount = 0;
-        fireCountText.text = fireCount.ToString();
-        fireSpawnPoints = GameObject.FindGameObjectsWithTag("FireSpawnPoint");
+        CurrentLevel = 1;
         GamePoolManager.Instance.CreatePool(fireObject, maxPoolSize);
         SpawnFireHandler();
     }
 	
 	// Update is called once per frame
 	private void Update () {
-        fireCountText.text = fireCount.ToString();
+        
     }
 
     public void SpawnFireHandler(){
-
-        foreach(GameObject spawn in fireSpawnPoints)
+        
+        fireSpawnPoints = GameObject.FindGameObjectsWithTag("FireSpawnPoint");
+        foreach (GameObject spawn in fireSpawnPoints)
         {
             Vector2 spawnLoc = new Vector2(spawn.transform.position.x, spawn.transform.position.y);
             GamePoolManager.Instance.ReuseObject(fireObject, spawnLoc, Quaternion.identity);
-            fireCount++;
+            PlayerController.Instance.FireCount++;
         }
     }
 
@@ -68,7 +59,7 @@ public class FireManager : MonoBehaviour {
                 fire.SetActive(false);
             }
         }
-        FireCount = 0;
+        PlayerController.Instance.FireCount = 0;
     }
 
 }

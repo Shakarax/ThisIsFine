@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private GameObject pistol;
     [SerializeField] private GameObject shotgun;
     [SerializeField] private List<GameObject> gameLevels;
+    [SerializeField] private GameObject fireBossPrefab;
 
     private float immortalTime = 1;
     private bool hasSwappedLevel = false;
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	private void Start ()
     {
+        Instantiate(fireBossPrefab);
         PlayerScoreCount = 0;
         healthStat.Initialize();
         IsDead = false;
@@ -124,7 +126,7 @@ public class PlayerController : MonoBehaviour {
         if (healthStat.CurrentHp > 0 && !immortal)
         {
             if (collision.tag == "Fire") { healthStat.CurrentHp -= FireManager.Instance.FireDamage; }
-
+            if (collision.tag == "Boss") { healthStat.CurrentHp -= FireBoss.Instance.Damage; }
             if (!IsDead)
             {
                 immortal = true;
@@ -213,6 +215,16 @@ public class PlayerController : MonoBehaviour {
         FireManager.Instance.DeSpawnFireHandler();
         FireManager.Instance.SpawnFireHandler();
         healthStat.CurrentHp = healthStat.MaxHp;
+        if (GameObject.FindGameObjectsWithTag("Boss") != null)
+        {
+            GameObject[] bosses = GameObject.FindGameObjectsWithTag("Boss");
+            foreach (GameObject boss in bosses)
+            {
+                Destroy(boss);
+            }
+        }
+        Instantiate(fireBossPrefab);
+
         
     }
 

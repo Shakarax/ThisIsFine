@@ -15,6 +15,8 @@ TagManager:
   - Shotgun
   - BossSpawnPoint
   - Boss
+  - BossPatrolPoint
+  - BossLOS
   layers:
   - Default
   - TransparentFX

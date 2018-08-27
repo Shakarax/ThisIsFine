@@ -96,10 +96,10 @@ public class PlayerController : MonoBehaviour {
         } else if (FireCount > 0 && hasSwappedLevel){
             hasSwappedLevel = false;
         }
-        // if (Input.GetKeyDown(KeyCode.T))
-        //{
-        //  LevelSwapper();
-        //}
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+          LevelSwapper();
+        }
 	}
 
     // Anything physics related should go in this update function

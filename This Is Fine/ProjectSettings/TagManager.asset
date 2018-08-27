@@ -14,6 +14,7 @@ TagManager:
   - Pistol
   - Shotgun
   - BossSpawnPoint
+  - Boss
   layers:
   - Default
   - TransparentFX

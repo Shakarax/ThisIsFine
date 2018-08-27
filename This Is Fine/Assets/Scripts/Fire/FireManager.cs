@@ -18,7 +18,7 @@ public class FireManager : MonoBehaviour {
         set { fireCount = value; }
     }
 
-    private int fireDamage = 10;
+    private int fireDamage = 20;
     public int FireDamage
     {
         get { return fireDamage; }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
@@ -19,7 +20,6 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private GameObject pistol;
     [SerializeField] private GameObject shotgun;
     [SerializeField] private List<GameObject> gameLevels;
-    [SerializeField] private GameObject fireBossPrefab;
 
     private float immortalTime = 1;
     private bool hasSwappedLevel = false;
@@ -57,7 +57,6 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	private void Start ()
     {
-        Instantiate(fireBossPrefab);
         PlayerScoreCount = 0;
         healthStat.Initialize();
         IsDead = false;
@@ -73,6 +72,11 @@ public class PlayerController : MonoBehaviour {
     {
         GameTimer();
         UpdateScoreCount();
+        if (healthStat.CurrentHp <= 0)
+        {
+            // Render Game Over with Score
+            SceneManager.LoadScene("GameOver");
+        }
         if (FireManager.Instance.FireCount <= 0 && !hasSwappedLevel)
         {
             LevelSwapper();
@@ -126,18 +130,12 @@ public class PlayerController : MonoBehaviour {
         if (healthStat.CurrentHp > 0 && !immortal)
         {
             if (collision.tag == "Fire") { healthStat.CurrentHp -= FireManager.Instance.FireDamage; }
-            if (collision.tag == "Boss") { healthStat.CurrentHp -= FireBoss.Instance.Damage; }
             if (!IsDead)
             {
                 immortal = true;
                 StartCoroutine(IndicateImmortal());
                 yield return new WaitForSeconds(immortalTime);
                 immortal = false;
-            }
-            else if (healthStat.CurrentHp <= 0)
-            {
-                // Render Game Over with Score
-                Time.timeScale = 0;
             }
         }
     }
@@ -215,15 +213,6 @@ public class PlayerController : MonoBehaviour {
         FireManager.Instance.DeSpawnFireHandler();
         FireManager.Instance.SpawnFireHandler();
         healthStat.CurrentHp = healthStat.MaxHp;
-        if (GameObject.FindGameObjectsWithTag("Boss") != null)
-        {
-            GameObject[] bosses = GameObject.FindGameObjectsWithTag("Boss");
-            foreach (GameObject boss in bosses)
-            {
-                Destroy(boss);
-            }
-        }
-        Instantiate(fireBossPrefab);
 
         
     }

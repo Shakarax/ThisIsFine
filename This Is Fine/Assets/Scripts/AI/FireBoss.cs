@@ -10,7 +10,14 @@ public class FireBoss : MonoBehaviour {
     [SerializeField] private int bossScoreValue = 1000;
     [SerializeField] private List<string> damageSources;
     [SerializeField] private float movementSpeed = 5f;
-    [SerializeField] private BoxCollider2D ignoreFireCollider; 
+    [SerializeField] private BoxCollider2D ignoreFireCollider;
+    [SerializeField] private GameObject[] levelOnePatrolPoints;
+    [SerializeField] private GameObject[] levelTwoPatrolPoints;
+    [SerializeField] private GameObject[] levelThreePatrolPoints;
+    [SerializeField] private GameObject[] levelFourPatrolPoints;
+    [SerializeField] private GameObject[] levelFivePatrolPoints;
+    [SerializeField] private GameObject[] levelSixPatrolPoints;
+    [SerializeField] private GameObject[] levelSevenPatrolPoints;
 
     private SpriteRenderer bossSpriteRenderer;
     private Animator bossAnimator;
@@ -26,6 +33,7 @@ public class FireBoss : MonoBehaviour {
     public int Damage { get; set; }
     private Transform currentDestination;
     private int currentDestinationIndex;
+    public int CurrentLevel { get; set; }
 
     private static FireBoss instance;
     public static FireBoss Instance
@@ -46,11 +54,18 @@ public class FireBoss : MonoBehaviour {
         currentHp = maxHp;
         Damage = 25;
         IsDead = false;
-        destinations = GameObject.FindGameObjectsWithTag("BossPatrolPoint");
-        for(int i = 0; i < destinations.Length; i++)
-        {
-            Debug.Log(destinations[i].name.ToString() + " Index: " + i);
-        }
+
+        GameObject[] currentLevelDestinations = levelOnePatrolPoints;
+
+        if (CurrentLevel == 1) { currentLevelDestinations = levelOnePatrolPoints; }
+        if (CurrentLevel == 2) { currentLevelDestinations = levelTwoPatrolPoints; }
+        if (CurrentLevel == 3) { currentLevelDestinations = levelThreePatrolPoints; }
+        if (CurrentLevel == 4) { currentLevelDestinations = levelFourPatrolPoints; }
+        if (CurrentLevel == 5) { currentLevelDestinations = levelFivePatrolPoints; }
+        if (CurrentLevel == 6) { currentLevelDestinations = levelSixPatrolPoints; }
+        if (CurrentLevel == 7) { currentLevelDestinations = levelSevenPatrolPoints; }
+
+        destinations = currentLevelDestinations;
         currentDestinationIndex = 0;
         currentDestination = destinations[currentDestinationIndex].transform;
     }

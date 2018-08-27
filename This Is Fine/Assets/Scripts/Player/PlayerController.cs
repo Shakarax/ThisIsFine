@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour {
     public Transform MyTransform { get; set; }
     public bool IsDead { get; set; }
     public SpriteRenderer WeaponSprite { get; set; }
+    public GameObject Pistol { get { return pistol; } }
+    public GameObject Shotgun {  get { return shotgun; } }
     public int PlayerScoreCount {
         get { return playerScoreCount; }
         set { playerScoreCount = value; }

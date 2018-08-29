@@ -1,11 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Utility\UI\SoundManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Fire\FireController.cs">
     <Files>
       <File FileName="Assets\Scripts\Weapons\WeaponController.cs" Line="7" Column="37" />
       <File FileName="Assets\Scripts\Player\Player Components\ShotgunBullet.cs" Line="7" Column="52" />
-      <File FileName="Assets\Scripts\Utility\UI\Credits.cs" Line="9" Column="25" />
       <File FileName="Assets\Scripts\Utility\UI\SoundManager.cs" Line="24" Column="25" />
+      <File FileName="Assets\Scripts\Player\Player Components\ShotgunBulletManager.cs" Line="44" Column="18" />
+      <File FileName="Assets\Scripts\Player\Player Components\PistolBulletManager.cs" Line="39" Column="1" />
+      <File FileName="Assets\Scripts\Fire\FireController.cs" Line="51" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

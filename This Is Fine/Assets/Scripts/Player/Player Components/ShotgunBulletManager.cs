@@ -40,6 +40,8 @@ public class ShotgunBulletManager : MonoBehaviour {
             GamePoolManager.Instance.ReuseObject(bullet, bulletSpawnLoc1.transform.position, Quaternion.identity);
             GamePoolManager.Instance.ReuseObject(bullet, bulletSpawnLoc2.transform.position, Quaternion.identity);
             GamePoolManager.Instance.ReuseObject(bullet, bulletSpawnLoc3.transform.position, Quaternion.identity);
+			AudioSource shoot = GetComponent<AudioSource>();
+			shoot.Play ();
         }
     }
 }

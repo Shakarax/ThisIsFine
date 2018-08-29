@@ -35,17 +35,20 @@ public class FireController : PoolObject {
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+		AudioSource shoot = GetComponent<AudioSource>();
         if (collider.tag == "PistolBullet")
         {
             currentHp -= PlayerController.Instance.GetComponentInChildren<PistolController>().Damage;
             PlayerController.Instance.PlayerScoreCount += fireScoreValue;
-            collider.gameObject.SetActive(false);
+			collider.gameObject.SetActive(false);
+			shoot.Play ();
         }
         if (collider.tag == "ShotgunBullet")
         {
             currentHp -= PlayerController.Instance.GetComponentInChildren<ShotgunController>().Damage;
             PlayerController.Instance.PlayerScoreCount += fireScoreValue;
             collider.gameObject.SetActive(false);
+			shoot.Play ();
         }
         if (collider.tag == "Fire" || collider.tag == "Wall")
         {

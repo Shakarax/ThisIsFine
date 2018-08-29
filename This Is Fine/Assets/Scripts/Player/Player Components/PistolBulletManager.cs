@@ -10,6 +10,7 @@ public class PistolBulletManager : MonoBehaviour {
     private float firingRate;
     private float currentCooldownTimer; // this is Increase equal to attackSpeed
     private bool hasCooldownTimerStarted = false;
+	public AudioClip shoot;
 
 
     // Use this for initialization
@@ -35,6 +36,8 @@ public class PistolBulletManager : MonoBehaviour {
             {
                 hasCooldownTimerStarted = true;
                 GamePoolManager.Instance.ReuseObject(bullet, bulletSpawnLoc.position, Quaternion.identity);
+				AudioSource shoot = GetComponent<AudioSource>();
+				shoot.Play ();
             }
    }
 }

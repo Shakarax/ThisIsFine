@@ -90,7 +90,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1389612894895572
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1088232659925694}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.58, y: 1.03, z: 0}
+  m_LocalPosition: {x: 1.57, y: 1.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4397723308581354}
@@ -226,7 +226,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1194341698463064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.61, y: 1, z: 0}
+  m_LocalPosition: {x: 1.57, y: 1.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4397723308581354}
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1479405566571180, guid: 6d64c0d597906d642b587002babb7e3a, type: 2}
-  maxPoolSize: 30
+  maxPoolSize: 100
   bulletSpawnLoc1: {fileID: 4380040601537690}
   bulletSpawnLoc2: {fileID: 4220340323727942}
   bulletSpawnLoc3: {fileID: 4588426297369400}
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1479405566571180, guid: 5093cd802d7893149a0f336f51104b69, type: 2}
-  maxPoolSize: 20
+  maxPoolSize: 60
   bulletSpawnLoc: {fileID: 4381283133548888}
 --- !u!114 &114362450652069828
 MonoBehaviour:
@@ -434,7 +434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1f3a7a3d436c84b89b4df27238aa7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingrate: 1
   damage: 1
   quality: 1
   qualityOneDamage: 20
@@ -463,7 +462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9476d6e56bd21754781c8bdeda6e2bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingrate: 1
   damage: 1
   quality: 1
   qualityOneDamage: 20

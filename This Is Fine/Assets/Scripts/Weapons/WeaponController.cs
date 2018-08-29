@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class WeaponController : MonoBehaviour {
 
-    [SerializeField] protected float firingrate = 1.0f;
+    protected float firingrate = 0.5f;
     [SerializeField] protected float damage = 1.0f;
     [SerializeField] protected int quality = 1;
 
